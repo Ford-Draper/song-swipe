@@ -30,17 +30,17 @@ export const useSongsStore = defineStore("songs", {
   }),
 
   getters: {
-    currentSong(state): SongEntry | null {
-      return state.songs[state.currentIndex] ?? null;
+    currentSong(): SongEntry | null {
+      return this.songs[this.currentIndex] ?? null;
     },
-    done(state): boolean {
-      return state.currentIndex >= state.songs.length;
+    done(): boolean {
+      return this.currentIndex >= this.songs.length;
     },
-    likedCount(state): number {
-      return state.liked.length;
+    likedCount(): number {
+      return this.liked.length;
     },
-    dislikedCount(state): number {
-      return state.disliked.length;
+    dislikedCount(): number {
+      return this.disliked.length;
     },
   },
 
